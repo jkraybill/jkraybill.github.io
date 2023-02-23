@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>scheduler</title>
+
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js" type="text/javascript" />
+	<script src="PapaParse-5.0.2/papaparse.min.js" type="text/javascript" />
+
+	<script type="text/javascript">
+		var inputType = "string";
+		var stepped = 0, rowCount = 0, errorCount = 0, firstError;
+		var start, end;
+		var firstRun = true;
+		var maxUnparseLength = 10000;
+
+		stepped = 0;
+		rowCount = 0;
+		errorCount = 0;
+		firstError = undefined;
+
+		var config = buildConfig();
+
+		$('#submit').click(function()
+			{
+				if (!$('#files')[0].files.length)
+				{
+					alert("Please choose at least one file to parse.");
+					return enableButton();
+				}
+
+				$('#files').parse({
+					config: config,
+					before: function(file, inputElem)
+					{
+						start = now();
+						console.log("Parsing file...", file);
+					},
+					error: function(err, file)
+					{
+						console.log("ERROR:", err, file);
+						firstError = firstError || err;
+						errorCount++;
+					},
+					complete: function()
+					{
+						end = now();
+					}
+				});
+			});
+		});
+
+		function buildConfig()
+		{
+			return {
+				delimiter: ",",
+				header: true,
+				dynamicTyping: false,
+				skipEmptyLines: true,
+				preview: 0,
+				step: undefined,
+				worker: false,
+				comments: "#",
+				complete: completeFn,
+				error: errorFn,
+				download: false
+			};
+		}
+
+		function completeFn(results)
+		{
+			end = now();
+
+			if (results && results.errors)
+			{
+				if (results.errors)
+				{
+					errorCount = results.errors.length;
+					firstError = results.errors[0];
+				}
+				if (results.data && results.data.length > 0)
+					rowCount = results.data.length;
+			}
+
+			printStats("Parse complete");
+			console.log("    Results:", results);
+		}
+
+		function errorFn(err, file)
+		{
+			end = now();
+			console.log("ERROR:", err, file);
+		}
+
+		function now()
+		{
+			return typeof window.performance !== 'undefined'
+					? window.performance.now()
+					: 0;
+		}
+	</script>
+</head>
+<body>
+
+<form>
+Schedule CSV: <input type="file" id="files" />
+
+<button id="submit" class="green">Parse</button>
+</form>
+
+
+</body>
+</html>
