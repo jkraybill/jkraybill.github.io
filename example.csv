@@ -1,0 +1,27 @@
+﻿NAME,SUPPORTED,DEPT
+Person A,Y,A
+Person B,Y,A
+Person C,N,B
+Person D,Y,B
+Person E,Y,C
+Person F,N,D
+Person G,Y,E
+Person H,N,E
+Person I,N,F
+Person J,Y,G
+Person K,Y,H
+Person L,N,H
+Person M,N,H
+Person N,Y,H
+Person O,N,I
+Person P,Y,J
+Person Q,N,J
+Person R,Y,K
+Person S,N,L
+Person T,Y,L
+Person U,Y,L
+Person V,Y,L
+Person W,N,L
+Person X,Y,L
+Person Y,N,L
+Person Z,Y,L

@@ -3,6 +3,80 @@
 <head>
 	<title>scheduler</title>
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		body, h1, p {
+			font-family: 'Roboto', sans-serif;
+		}
+		.button,
+		button,
+		input[type=button],
+		button[type=submit] {
+			display: inline-block;
+			padding: 10px 25px;
+			color: #FFF;
+			border: 0;
+			text-decoration: none;
+			background: #366992;
+			margin: 5px;
+			transition: background .2s;
+			border-radius: 50px;
+			cursor: pointer;
+			outline: none;
+			line-height: 1.5em;
+			font-size: 18px;
+		}
+
+		.button[disabled],
+		button[disabled],
+		input[disabled] {
+			background: #BBB !important;
+			cursor: default !important;
+		}
+
+		.button:hover,
+		button:hover,
+		input[type=button]:hover,
+		button[type=submit]:hover {
+			text-decoration: none;
+			background: #4B91C9;
+			color: #FFF;
+		}
+
+		.button.red,
+		button.red {
+			background: #A01919;
+		}
+
+		.button.red:hover,
+		button.red:hover {
+			background: #DD2222;
+		}
+
+		.button.green,
+		button.green {
+			background: #419236;
+		}
+
+		.button.green:hover,
+		button.green:hover {
+			background: #4DB43F;
+		}
+
+		.button.gray,
+		button.gray {
+			background: #666;
+		}
+
+		.button.gray:hover,
+		button.gray:hover {
+			background: #999;
+		}
+	</style>
+
 	<script src="https://code.jquery.com/jquery-3.6.3.min.js" type="text/javascript"></script>
 	<script src="PapaParse-5.0.2/papaparse.min.js" type="text/javascript"></script>
 
@@ -141,10 +215,15 @@
 </head>
 <body>
 
+<h1>Staff Scheduler</h1>
+
+Select a CSV file that follows <a href="example.csv">this format</a> and click "Go". Remove staff members from the CSV after they are scheduled, and start over when you run out of groups.<br/><br/>
+Oh and don't forget - JK is a legend.<br/><br/>
+
 <form onSubmit="return false;">
 Schedule CSV: <input type="file" id="files" multiple>
 
-<button id="submit" class="green">Parse</button>
+<button id="submit" class="green">Go</button>
 
 <div id="results">
 </div>
