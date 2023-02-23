@@ -3,8 +3,8 @@
 <head>
 	<title>scheduler</title>
 
-	<script src="https://code.jquery.com/jquery-3.6.3.min.js" type="text/javascript" />
-	<script src="PapaParse-5.0.2/papaparse.min.js" type="text/javascript" />
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js" type="text/javascript"></script>
+	<script src="PapaParse-5.0.2/papaparse.min.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
 		var inputType = "string";
@@ -20,18 +20,26 @@
 
 		var config = buildConfig();
 
-		$('#submit').click(function()
-			{
+		console.log("Loaded");
+
+		$(function() {
+			console.log("initialized");
+			$('#submit').click(function() {
+				console.log("Clicked");
 				if (!$('#files')[0].files.length)
 				{
-					alert("Please choose at least one file to parse.");
-					return enableButton();
+					console.log("No file selected");
+					alert("Please choose a file to parse!");
+					return false;
 				}
+
+				console.log("Parsing...");
 
 				$('#files').parse({
 					config: config,
 					before: function(file, inputElem)
 					{
+						console.log("Parsing begin");
 						start = now();
 						console.log("Parsing file...", file);
 					},
@@ -81,8 +89,9 @@
 					rowCount = results.data.length;
 			}
 
-			printStats("Parse complete");
 			console.log("    Results:", results);
+
+			doDraw(results.data);
 		}
 
 		function errorFn(err, file)
@@ -97,14 +106,48 @@
 					? window.performance.now()
 					: 0;
 		}
+
+		function doDraw(results) {
+			// get a random person
+			var persons = [];
+			var deptCounts = {};
+			var supportedCounts = {};
+
+			while (persons.length < 4) {
+				var legit = false;
+				while (!legit) {
+					var i = Math.floor(Math.random() * results.length);
+					if ((deptCounts[results[i].DEPT] != 1) && (supportedCounts[results[i].SUPPORTED] != 2)) {
+						legit = true;
+					}
+				}
+
+				deptCounts[results[i].DEPT] = deptCounts[results[i].DEPT] ? (deptCounts[results[i].DEPT]+1) : 1;
+				supportedCounts[results[i].SUPPORTED] = supportedCounts[results[i].SUPPORTED] ? (supportedCounts[results[i].SUPPORTED] + 1) : 1;
+				console.log(deptCounts);
+				console.log(supportedCounts);
+				persons.push(results[i]);
+				results.splice(i, 1);
+			}
+
+			var res = "";
+			for (i = 0; i < persons.length; i++) {
+				res += (i + 1) + ". " + persons[i].NAME + " - " + persons[i].DEPT + " - " + ((persons[i].SUPPORTED === "Y") ? "(supported)" : "(unsupported)") + "<br/>"
+			}
+
+			$("#results").html(res);
+		}
 	</script>
 </head>
 <body>
 
-<form>
-Schedule CSV: <input type="file" id="files" />
+<form onSubmit="return false;">
+Schedule CSV: <input type="file" id="files" multiple>
 
 <button id="submit" class="green">Parse</button>
+
+<div id="results">
+</div>
 </form>
 
 
