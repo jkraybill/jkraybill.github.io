@@ -114,6 +114,56 @@
       line-height: 1.4;
     }
 
+    .section-divider {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-dim);
+    }
+
+    .showcase-group {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-top: 1.25rem;
+      margin-bottom: 0.4rem;
+      padding-left: 0.1rem;
+    }
+
+    .showcase {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .showcase-item {
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .showcase-item:last-child {
+      border-bottom: none;
+    }
+
+    .showcase-name {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .showcase-desc {
+      color: var(--text-dim);
+    }
+
     footer {
       margin-top: 3rem;
       padding-top: 1.5rem;
@@ -168,13 +218,81 @@
         </div>
         <p class="desc">Map generator for Game Commander</p>
       </a>
-      <a href="https://example.com" class="card" target="_blank" rel="noopener">
-        <div class="card-header">
-          <h2>Example Link</h2>
-          <span class="badge manual">link</span>
-        </div>
-        <p class="desc">Replace or remove this — just showing how manual entries work</p>
-      </a>
+    </div>
+    <div class="section-divider">
+      <h3 class="section-title">other projects</h3>
+    </div>
+    <div class="showcase-group">Games & Simulations</div>
+    <div class="showcase">
+      <div class="showcase-item">
+        <span class="showcase-name">Pippin's Last Stand</span><span class="showcase-desc"> &mdash; Pippin's Last Stand (NFS)</span>
+      </div>
+      <div class="showcase-item">
+        <span class="showcase-name">JKBox</span><span class="showcase-desc"> &mdash; Jackbox but good (NFS)</span>
+      </div>
+      <div class="showcase-item">
+        <span class="showcase-name">Space Lampreys</span><span class="showcase-desc"> &mdash; The #1 space lamprey simulator (OSG)</span>
+      </div>
+      <div class="showcase-item">
+        <span class="showcase-name">Evolution Aquarium</span><span class="showcase-desc"> &mdash; The #1 billion+ year aquarium simulator (NFS)</span>
+      </div>
+      <div class="showcase-item">
+        <span class="showcase-name">Evolution</span><span class="showcase-desc"> &mdash; The #1 multi-dimensional evolution simulator (NFS)</span>
+      </div>
+      <div class="showcase-item">
+        <span class="showcase-name">JK Games</span><span class="showcase-desc"> &mdash; Playground for oddly specific and nothing-for-sale ideas</span>
+      </div>
+      <div class="showcase-item">
+        <span class="showcase-name">Alien Lab</span><span class="showcase-desc"> &mdash; The #1 alien breeding, racing, and political governance simulator</span>
+      </div>
+      <div class="showcase-item">
+        <span class="showcase-name">Automata</span><span class="showcase-desc"> &mdash; The #1 unfinished set of games that rival Conway's Game of Life either in terms of emergence or terrible colony collapse syndrome</span>
+      </div>
+    </div>
+    <div class="showcase-group">Poker & Card Games</div>
+    <div class="showcase">
+      <div class="showcase-item">
+        <span class="showcase-name">Poker Apparel</span><span class="showcase-desc"> &mdash; The #1 evidence-based psychological warfare clothing line (NFS)</span>
+      </div>
+      <div class="showcase-item">
+        <span class="showcase-name">PokerSim</span><span class="showcase-desc"> &mdash; The #1 poker simulation engine that will never beat you at poker (NFS)</span>
+      </div>
+      <div class="showcase-item">
+        <span class="showcase-name">Triple Draw Manager</span><span class="showcase-desc"> &mdash; Championship-grade deuce-to-seven triple draw lowball engine (NFS)</span>
+      </div>
+      <div class="showcase-item">
+        <span class="showcase-name">Triple Draw Sim</span><span class="showcase-desc"> &mdash; The #1 triple draw tournament strategy optimizer (NFS)</span>
+      </div>
+      <div class="showcase-item">
+        <span class="showcase-name">Calcutta Analyzer</span><span class="showcase-desc"> &mdash; The #1 Calcutta auction analysis tool (NFS)</span>
+      </div>
+    </div>
+    <div class="showcase-group">NetHack</div>
+    <div class="showcase">
+      <div class="showcase-item">
+        <span class="showcase-name">NetHacks</span><span class="showcase-desc"> &mdash; The competitive NetHack challenge series behind the leaderboard</span>
+      </div>
+      <div class="showcase-item">
+        <span class="showcase-name">NetHack Spirit Guide</span><span class="showcase-desc"> &mdash; The #1 in-game bard and lore system for Nethack players who want to emulate Brave Sir Robin</span>
+      </div>
+    </div>
+    <div class="showcase-group">AI & Frameworks</div>
+    <div class="showcase">
+      <div class="showcase-item">
+        <span class="showcase-name">Gordo Framework</span><span class="showcase-desc"> &mdash; Session continuity and trust calibration for AI pair programming</span>
+      </div>
+      <div class="showcase-item">
+        <span class="showcase-name">You Framework</span><span class="showcase-desc"> &mdash; Self-improving collaboration framework for working with any AI partner</span>
+      </div>
+      <div class="showcase-item">
+        <span class="showcase-name">Kernel</span><span class="showcase-desc"> &mdash; Proto-constitutional framework for delegated decision-making</span>
+      </div>
+      <div class="showcase-item">
+        <span class="showcase-name">Optimizer</span><span class="showcase-desc"> &mdash; The #1 game-playing AI engine improvement pipeline (NFS)</span>
+      </div>
+      <div class="showcase-item">
+        <span class="showcase-name">Healthcare</span><span class="showcase-desc"> &mdash; Data-driven health insurance and medical decision-making</span>
+      </div>
     </div>
     <footer>
       <span>updated Mar 12, 2026</span>

@@ -57,11 +57,12 @@ def build_entries(config, api_repos):
     overrides = config.get("overrides", {})
     order = config.get("order", [])
     manual = config.get("manual_entries", [])
+    showcase_ids = {s["id"] for s in config.get("showcase", []) if "id" in s}
 
     # Build lookup of API repos by id
     entries = {}
     for repo in api_repos:
-        if repo["id"] in hidden:
+        if repo["id"] in hidden or repo["id"] in showcase_ids:
             continue
         entry = repo.copy()
         if repo["id"] in overrides:
@@ -95,6 +96,7 @@ def render_html(config, entries):
     """Render the index page."""
     title = config.get("title", "jkraybill")
     subtitle = config.get("subtitle", "projects & pages")
+    showcase = config.get("showcase", [])
     now = datetime.now(timezone.utc).strftime("%b %d, %Y")
 
     cards_html = ""
@@ -116,6 +118,34 @@ def render_html(config, entries):
         </div>
         {desc_html}
       </a>"""
+
+    # Render showcase section (private repos, no links, with group headings)
+    showcase_html = ""
+    if showcase:
+        showcase_html += """
+    <div class="section-divider">
+      <h3 class="section-title">other projects</h3>
+    </div>"""
+        in_group = False
+        for item in showcase:
+            if "group" in item:
+                if in_group:
+                    showcase_html += """
+    </div>"""
+                showcase_html += f"""
+    <div class="showcase-group">{item['group']}</div>
+    <div class="showcase">"""
+                in_group = True
+            elif "id" in item:
+                desc = item.get("description", "")
+                desc_html = f'<span class="showcase-desc"> &mdash; {desc}</span>' if desc else ''
+                showcase_html += f"""
+      <div class="showcase-item">
+        <span class="showcase-name">{item['name']}</span>{desc_html}
+      </div>"""
+        if in_group:
+            showcase_html += """
+    </div>"""
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -233,6 +263,56 @@ def render_html(config, entries):
       line-height: 1.4;
     }}
 
+    .section-divider {{
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }}
+
+    .section-title {{
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-dim);
+    }}
+
+    .showcase-group {{
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-top: 1.25rem;
+      margin-bottom: 0.4rem;
+      padding-left: 0.1rem;
+    }}
+
+    .showcase {{
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }}
+
+    .showcase-item {{
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }}
+
+    .showcase-item:last-child {{
+      border-bottom: none;
+    }}
+
+    .showcase-name {{
+      font-weight: 600;
+      color: var(--text);
+    }}
+
+    .showcase-desc {{
+      color: var(--text-dim);
+    }}
+
     footer {{
       margin-top: 3rem;
       padding-top: 1.5rem;
@@ -266,7 +346,7 @@ def render_html(config, entries):
       <div class="subtitle">{subtitle}</div>
     </header>
     <div class="cards">{cards_html}
-    </div>
+    </div>{showcase_html}
     <footer>
       <span>updated {now}</span>
       <a href="https://github.com/jkraybill">github.com/jkraybill</a>

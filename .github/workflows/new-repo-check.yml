@@ -1,0 +1,22 @@
+name: New Repo Check
+
+on:
+  schedule:
+    # Check daily at 7am UTC
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for unconfigured repos
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 check-new-repos.py --token "$GITHUB_TOKEN"

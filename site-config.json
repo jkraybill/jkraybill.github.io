@@ -2,14 +2,7 @@
   "title": "jkraybill",
   "subtitle": "projects & pages",
 
-  "manual_entries": [
-    {
-      "id": "example",
-      "name": "Example Link",
-      "url": "https://example.com",
-      "description": "Replace or remove this — just showing how manual entries work"
-    }
-  ],
+  "manual_entries": [],
 
   "order": [
     "odds-mountain",
@@ -17,7 +10,60 @@
     "game-commander-mapgen"
   ],
 
-  "hidden": [],
+  "hidden": [
+    "DrillDown",
+    "Star-wars-pong",
+    "ben",
+    "countdown-timer",
+    "mathjs",
+    "poker-game-manager",
+    "rapfi",
+    "wildbg",
+    "polymarket",
+    "polymarket-tools",
+    "poly-nba",
+    "polymarket-trailer",
+    "arbitrage-finder",
+    "couchmoney",
+    "couchmoney.tv",
+    "finance-firefly",
+    "semantics",
+    "mum-book",
+    "mirror-paradox-letters-external",
+    "mirror-paradox-letters-internal",
+    "dogg-pound-gangstaz",
+    "home-server",
+    "laptop-tools",
+    "media-servers",
+    "dashcord-tools",
+    "dashcord-docs",
+    "dashcord-demo",
+    "dashcord-attendee-mobile-client",
+    "dashcord-attendee-mobile-server",
+    "free-stuff",
+    "myturnyourturn",
+    "kia-rio",
+    "gordo-smoke-test-v0.4.0",
+    "gordo-smoke-test-v0.5.0",
+    "gordo-smoke-test-v0.6.0",
+    "gordo-smoke-test-v0.7.0",
+    "gordo-smoke-test-v0.7.0-2",
+    "gordo-smoke-test-v0.7.0-3",
+    "gordo-smoke-test-v0.7.0-4",
+    "gordo-smoke-test-v0.7.0-5",
+    "gordo-smoke-test-v0.8.0-1",
+    "gordo-smoke-test-v0.9.0",
+    "private-scratchpad",
+    "jk-notes",
+    "axidraw",
+    "gilmour",
+    "loopholes",
+    "osg-hq",
+    "team-big-smoke",
+    "gpt-2-b",
+    "trakt-java",
+    "Seedwing-Core"
+  ],
 
   "overrides": {
     "odds-mountain": {
@@ -32,5 +78,35 @@
       "name": "Game Commander Mapgen",
       "description": "Map generator for Game Commander"
     }
-  }
+  },
+
+  "showcase": [
+    { "group": "Games & Simulations" },
+    { "id": "pippins-last-stand", "name": "Pippin's Last Stand", "description": "Pippin's Last Stand (NFS)" },
+    { "id": "jkbox", "name": "JKBox", "description": "Jackbox but good (NFS)" },
+    { "id": "osg-space-lampreys", "name": "Space Lampreys", "description": "The #1 space lamprey simulator (OSG)" },
+    { "id": "evolution-aquarium", "name": "Evolution Aquarium", "description": "The #1 billion+ year aquarium simulator (NFS)" },
+    { "id": "evolution", "name": "Evolution", "description": "The #1 multi-dimensional evolution simulator (NFS)" },
+    { "id": "jk-games", "name": "JK Games", "description": "Playground for oddly specific and nothing-for-sale ideas" },
+    { "id": "alienlab", "name": "Alien Lab", "description": "The #1 alien breeding, racing, and political governance simulator" },
+    { "id": "automata", "name": "Automata", "description": "The #1 unfinished set of games that rival Conway's Game of Life either in terms of emergence or terrible colony collapse syndrome" },
+
+    { "group": "Poker & Card Games" },
+    { "id": "poker-apparel", "name": "Poker Apparel", "description": "The #1 evidence-based psychological warfare clothing line (NFS)" },
+    { "id": "pokersim", "name": "PokerSim", "description": "The #1 poker simulation engine that will never beat you at poker (NFS)" },
+    { "id": "triple-draw-manager", "name": "Triple Draw Manager", "description": "Championship-grade deuce-to-seven triple draw lowball engine (NFS)" },
+    { "id": "triple-draw-sim", "name": "Triple Draw Sim", "description": "The #1 triple draw tournament strategy optimizer (NFS)" },
+    { "id": "calcutta-analyzer", "name": "Calcutta Analyzer", "description": "The #1 Calcutta auction analysis tool (NFS)" },
+
+    { "group": "NetHack" },
+    { "id": "nethacks", "name": "NetHacks", "description": "The competitive NetHack challenge series behind the leaderboard" },
+    { "id": "nethack-spirit-guide", "name": "NetHack Spirit Guide", "description": "The #1 in-game bard and lore system for Nethack players who want to emulate Brave Sir Robin" },
+
+    { "group": "AI & Frameworks" },
+    { "id": "gordo-framework", "name": "Gordo Framework", "description": "Session continuity and trust calibration for AI pair programming" },
+    { "id": "you-framework", "name": "You Framework", "description": "Self-improving collaboration framework for working with any AI partner" },
+    { "id": "kernel", "name": "Kernel", "description": "Proto-constitutional framework for delegated decision-making" },
+    { "id": "optimizer", "name": "Optimizer", "description": "The #1 game-playing AI engine improvement pipeline (NFS)" },
+    { "id": "healthcare", "name": "Healthcare", "description": "Data-driven health insurance and medical decision-making" }
+  ]
 }
