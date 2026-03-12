@@ -1,0 +1,36 @@
+{
+  "title": "jkraybill",
+  "subtitle": "projects & pages",
+
+  "manual_entries": [
+    {
+      "id": "example",
+      "name": "Example Link",
+      "url": "https://example.com",
+      "description": "Replace or remove this — just showing how manual entries work"
+    }
+  ],
+
+  "order": [
+    "odds-mountain",
+    "nethacks-leaderboard",
+    "game-commander-mapgen"
+  ],
+
+  "hidden": [],
+
+  "overrides": {
+    "odds-mountain": {
+      "name": "Odds Mountain",
+      "description": "Polymarket odds tracker"
+    },
+    "nethacks-leaderboard": {
+      "name": "NetHacks Leaderboard",
+      "description": "NetHack tournament leaderboard"
+    },
+    "game-commander-mapgen": {
+      "name": "Game Commander Mapgen",
+      "description": "Map generator for Game Commander"
+    }
+  }
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jkraybill</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface-hover: #242736;
+      --border: #2a2d3a;
+      --text: #e2e4ea;
+      --text-dim: #8b8fa3;
+      --accent: #6c8aff;
+      --accent-dim: #4a5a99;
+      --gh-badge: #2ea04370;
+      --gh-badge-text: #58d68d;
+      --manual-badge: #6c8aff30;
+      --manual-badge-text: #8ba4ff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 0 1rem;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 4rem 0 3rem;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+    }
+
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.25rem;
+    }
+
+    header .subtitle {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .card {
+      display: block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: background 0.15s, border-color 0.15s, transform 0.1s;
+    }
+
+    .card:hover {
+      background: var(--surface-hover);
+      border-color: var(--accent-dim);
+      transform: translateY(-1px);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.15rem 0.5rem;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+
+    .badge.gh {
+      background: var(--gh-badge);
+      color: var(--gh-badge-text);
+    }
+
+    .badge.manual {
+      background: var(--manual-badge);
+      color: var(--manual-badge-text);
+    }
+
+    .desc {
+      color: var(--text-dim);
+      font-size: 0.875rem;
+      margin-top: 0.35rem;
+      line-height: 1.4;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 2.5rem 0 2rem; }
+      header h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>jkraybill</h1>
+      <div class="subtitle">projects & pages</div>
+    </header>
+    <div class="cards">
+      <a href="https://jkraybill.github.io/odds-mountain/" class="card" target="_blank" rel="noopener">
+        <div class="card-header">
+          <h2>Odds Mountain</h2>
+          <span class="badge gh">pages</span>
+        </div>
+        <p class="desc">Polymarket odds tracker</p>
+      </a>
+      <a href="https://jkraybill.github.io/nethacks-leaderboard/" class="card" target="_blank" rel="noopener">
+        <div class="card-header">
+          <h2>NetHacks Leaderboard</h2>
+          <span class="badge gh">pages</span>
+        </div>
+        <p class="desc">NetHack tournament leaderboard</p>
+      </a>
+      <a href="https://jkraybill.github.io/game-commander-mapgen/" class="card" target="_blank" rel="noopener">
+        <div class="card-header">
+          <h2>Game Commander Mapgen</h2>
+          <span class="badge gh">pages</span>
+        </div>
+        <p class="desc">Map generator for Game Commander</p>
+      </a>
+      <a href="https://example.com" class="card" target="_blank" rel="noopener">
+        <div class="card-header">
+          <h2>Example Link</h2>
+          <span class="badge manual">link</span>
+        </div>
+        <p class="desc">Replace or remove this — just showing how manual entries work</p>
+      </a>
+    </div>
+    <footer>
+      <span>updated Mar 12, 2026</span>
+      <a href="https://github.com/jkraybill">github.com/jkraybill</a>
+    </footer>
+  </div>
+</body>
+</html>
