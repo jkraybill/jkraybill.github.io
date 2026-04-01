@@ -69,7 +69,7 @@
   "overrides": {
     "odds-mountain": {
       "name": "Odds Mountain",
-      "description": "Polymarket odds tracker"
+      "description": "A very difficult poker trainer"
     },
     "nethacks-leaderboard": {
       "name": "NetHacks Leaderboard",
