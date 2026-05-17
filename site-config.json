@@ -93,7 +93,10 @@
     "gpt-2-b",
     "trakt-java",
     "Seedwing-Core",
-    "jkraybill.github.io"
+    "jkraybill.github.io",
+    "business",
+    "house",
+    "project-gordo-backchannel"
   ],
 
   "overrides": {
@@ -127,6 +130,7 @@
     { "id": "pokersim", "name": "PokerSim", "description": "The #1 poker simulation engine that will never beat you at poker (NFS)" },
     { "id": "triple-draw-manager", "name": "Triple Draw Manager", "description": "Championship-grade deuce-to-seven triple draw lowball engine (NFS)" },
     { "id": "triple-draw-sim", "name": "Triple Draw Sim", "description": "The #1 triple draw tournament strategy optimizer (NFS)" },
+    { "id": "drawmaha", "name": "Drawmaha", "description": "Championship-grade Drawmaha engine (NFS)" },
     { "id": "calcutta-analyzer", "name": "Calcutta Analyzer", "description": "The #1 Calcutta auction analysis tool (NFS)" },
 
     { "group": "NetHack" },
@@ -137,6 +141,9 @@
     { "id": "you-framework", "name": "You Framework", "description": "Self-improving collaboration framework for working with any AI partner" },
     { "id": "kernel", "name": "Kernel", "description": "Proto-constitutional framework for delegated decision-making" },
     { "id": "optimizer", "name": "Optimizer", "description": "The #1 game-playing AI engine improvement pipeline (NFS)" },
-    { "id": "healthcare", "name": "Healthcare", "description": "Data-driven health insurance and medical decision-making" }
+    { "id": "healthcare", "name": "Healthcare", "description": "Data-driven health insurance and medical decision-making" },
+
+    { "group": "Wildlife" },
+    { "id": "animalnet", "name": "AnimalNet", "description": "Open-source camera trap software for identifying backyard wildlife" }
   ]
 }
