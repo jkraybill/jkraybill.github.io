@@ -2,9 +2,45 @@
   "title": "jkraybill",
   "subtitle": "projects & pages",
 
-  "manual_entries": [],
+  "manual_entries": [
+    {
+      "id": "project-gordo",
+      "name": "Project Gordo",
+      "url": "https://github.com/jkraybill/project-gordo",
+      "description": "Constitutional framework for human-AI collaboration"
+    },
+    {
+      "id": "gordo-seal",
+      "name": "Gordo Seal",
+      "url": "https://github.com/jkraybill/gordo-seal",
+      "description": "Bilateral consent attestation primitive"
+    },
+    {
+      "id": "gordo-roundtable",
+      "name": "Gordo Roundtable",
+      "url": "https://github.com/jkraybill/gordo-roundtable",
+      "description": "Multi-model adversarial review primitive"
+    },
+    {
+      "id": "gordo-forge",
+      "name": "Gordo Forge",
+      "url": "https://github.com/jkraybill/gordo-forge",
+      "description": "Project scaffolding and composition layer"
+    },
+    {
+      "id": "gordo-ledger",
+      "name": "Gordo Ledger",
+      "url": "https://github.com/jkraybill/gordo-ledger",
+      "description": "Semantic memory and cross-project search"
+    }
+  ],
 
   "order": [
+    "project-gordo",
+    "gordo-seal",
+    "gordo-roundtable",
+    "gordo-forge",
+    "gordo-ledger",
     "odds-mountain",
     "nethacks-leaderboard",
     "game-commander-mapgen"
@@ -98,7 +134,6 @@
     { "id": "nethack-spirit-guide", "name": "NetHack Spirit Guide", "description": "The #1 in-game bard and lore system for Nethack players who want to emulate Brave Sir Robin" },
 
     { "group": "AI & Frameworks" },
-    { "id": "gordo-framework", "name": "Gordo Framework", "description": "Session continuity and trust calibration for AI pair programming" },
     { "id": "you-framework", "name": "You Framework", "description": "Self-improving collaboration framework for working with any AI partner" },
     { "id": "kernel", "name": "Kernel", "description": "Proto-constitutional framework for delegated decision-making" },
     { "id": "optimizer", "name": "Optimizer", "description": "The #1 game-playing AI engine improvement pipeline (NFS)" },
