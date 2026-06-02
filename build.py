@@ -153,6 +153,7 @@ def render_html(config, entries):
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title}</title>
+  <link rel="me" href="https://mastodon.social/@jkraybill">
   <style>
     :root {{
       --bg: #0f1117;
